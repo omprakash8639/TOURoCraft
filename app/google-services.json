@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "892752970595",
+    "project_id": "tourocraft-7fd35",
+    "storage_bucket": "tourocraft-7fd35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:892752970595:android:6e170ef483941735370956",
+        "android_client_info": {
+          "package_name": "com.omprakash.tourocraft"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB21fEN-3ueluUlxCjyjstL9Ye0kQNmec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

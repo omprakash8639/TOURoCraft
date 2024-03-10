@@ -1,0 +1,75 @@
+plugins {
+    id 'com.android.application'
+    id 'com.chaquo.python'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.omprakash.tourocraft'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.omprakash.tourocraft"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a", "x86_64"
+        }
+        python {
+            version "3.11"
+        }
+        python {
+            buildPython "C:/Users/ompra/AppData/Local/Programs/Python/Python311/python.exe"
+        }
+        sourceSets {
+            main {
+                python.srcDir "src/main/python"
+            }
+        }
+        python {
+            pip {
+                // A requirement specifier, with or without a version number:
+                install "requests"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.firebase:firebase-auth:22.3.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // add the dependency for the Google AI client SDK for Android
+    implementation("com.google.ai.client.generativeai:generativeai:0.1.2")
+
+    // Required for one-shot operations (to use `ListenableFuture` from Reactive Streams)
+    implementation("com.google.guava:guava:31.0.1-android")
+
+    // Required for streaming operations (to use `Publisher` from Guava Android)
+    implementation("org.reactivestreams:reactive-streams:1.0.4")
+
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.mapbox.maps:android:11.1.0' //map box
+    //implementation("com.mapbox.navigationux:android:1.0.0-beta.20")
+
+}
